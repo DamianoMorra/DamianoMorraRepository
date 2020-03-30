@@ -1,0 +1,11 @@
+#goal definition
+float32 qi
+float32 qf
+float32 dqc
+float32 tf
+---
+#result definition
+int32 status
+---
+#feedback
+float32 q
