@@ -1,0 +1,6 @@
+rosrun xacro xacro ex5.xacro > ex5.urdf
+
+urdf_to_graphiz ex5.urdf
+
+roslaunch ex5 display.launch
+
