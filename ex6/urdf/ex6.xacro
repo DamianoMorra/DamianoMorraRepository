@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+
+<robot name="kuka_LBR" xmlns:xacro="NS">
+    <xacro:include filename="$(find ex6)/urdf/ex6_macro.xacro" />
+	
+		<xacro:base_link_macro 
+			base_link_name="base_link">
+		</xacro:base_link_macro>
+
+		<xacro:kuka_joint
+			name="J0"
+			type="prismatic"
+			parent="base_link"
+			child="L0">
+			<origin xyz="0 0 0.15" />
+			<axis xyz="0 1 0"/>
+	    		<limit effort="200" velocity="2" lower="-0.5" upper="0.5"/>
+		</xacro:kuka_joint>
+
+		<xacro:kuka_link name="L0">
+		</xacro:kuka_link>
+
+		<xacro:kuka_joint
+			name="J1"
+			type="revolute"
+			parent="L0"
+			child="L1">
+			<origin xyz="0 0 0.15" />
+			<axis xyz="0 0 1"/>
+	    		<limit effort="176" velocity="1.71" lower="-2.97" upper="2.97"/>
+		</xacro:kuka_joint>
+
+		<xacro:kuka_link name="L1">
+		</xacro:kuka_link>
+
+		<xacro:kuka_joint
+			name="J2"
+			type="revolute"
+			parent="L1"
+			child="L2">
+			<origin xyz="0 0.1 0.1" />
+			<axis xyz="0 1 0"/>
+	    		<limit effort="176" velocity="1.71" lower="-2.09" upper="2.09"/>
+		</xacro:kuka_joint>
+
+		<xacro:kuka_link name="L2">
+		</xacro:kuka_link>
+		
+		<xacro:kuka_joint
+			name="J3"
+			type="revolute"
+			parent="L2"
+			child="L3">
+			<origin xyz="0 0 0.2" />
+			<axis xyz="0 0 1"/>
+	    		<limit effort="110" velocity="1.74" lower="-2.97" upper="2.97"/>
+		</xacro:kuka_joint>
+
+		<xacro:kuka_link name="L3">
+		</xacro:kuka_link>
+		
+		<xacro:kuka_joint
+			name="J4"
+			type="revolute"
+			parent="L3"
+			child="L4">
+			<origin xyz="0 -0.1 0.1" />
+			<axis xyz="0 -1 0"/>
+	    		<limit effort="110" velocity="2.27" lower="-2.09" upper="2.09"/>
+		</xacro:kuka_joint>
+
+		<xacro:kuka_link name="L4">
+		</xacro:kuka_link>
+		
+		<xacro:kuka_joint
+			name="J5"
+			type="revolute"
+			parent="L4"
+			child="L5">
+			<origin xyz="0 0 0.2" />
+			<axis xyz="0 0 1"/>
+	    		<limit effort="110" velocity="0.70" lower="-2.97" upper="2.97"/>
+		</xacro:kuka_joint>
+
+		<xacro:kuka_link name="L5">
+		</xacro:kuka_link>
+		
+		<xacro:kuka_joint
+			name="J6"
+			type="revolute"
+			parent="L5"
+			child="L6">
+			<origin xyz="0 0.1 0.1" />
+			<axis xyz="0 1 0"/>
+	    		<limit effort="40" velocity="3.14" lower="-2.09" upper="2.09"/>
+		</xacro:kuka_joint>
+
+		<xacro:kuka_link name="L6">
+		</xacro:kuka_link>
+
+		<xacro:kuka_joint
+			name="J7"
+			type="revolute"
+			parent="L6"
+			child="ee">
+			<origin xyz="0 0 0.15" />
+			<axis xyz="0 0 1"/>
+	    		<limit effort="40" velocity="3.14" lower="-1.31" upper="1.31"/>
+		</xacro:kuka_joint>
+
+		<xacro:end_effector_macro name="ee">
+		</xacro:end_effector_macro>
+</robot>
