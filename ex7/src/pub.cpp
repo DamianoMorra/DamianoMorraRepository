@@ -93,7 +93,6 @@ void EX7PUB::CB_sub7( std_msgs::Float64ConstPtr j_pos) {
 
 
 int main( int argc, char** argv ) {
-	GLOB_J=0;
 	ros::init( argc, argv, "ex7");
 	EX7PUB pm;
 
