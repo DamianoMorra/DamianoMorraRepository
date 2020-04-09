@@ -5,9 +5,6 @@
 
 using namespace std;
 
-int GLOB_J;
-
-
 class EX7PUB {
 
 	public:
